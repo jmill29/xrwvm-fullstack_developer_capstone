@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Link the style sheet here -->
+  <link href="/static/style.css" rel="stylesheet">
+  <link href="/static/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/contactus.css" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkturquoise; height: 1in;">
+      <div class="container-fluid">
+        <h2 style="padding-right: 5%;">Dealerships</h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="border_container">
+        <div class="container" id="flex_container">
+          <img class="img-responsive" src="/static/cars.png" style="min-width: 415px;" />
+        </div>
+        <div class="container" id="grid_container">
+          <div id="contact_us">
+            <img class="img-responsive" src="/static/contactus.png" id="contact_us_img" />
+          </div>
+          <div style="margin-left: 5%;">
+            <h2 id="contact_us_header">Contact Us</h2>
+            <div style="width: 70%;">
+              <div id="top_item">
+                <img class="img-responsive contact_info_img" src="/static/img/location.png">
+                <div style="font-size: 1em;">
+                  1234 Dream Car Avenue, Motorville, AutoState 56789
+                </div>
+              </div>
+              <div class="contact_info">
+                <img class="img-responsive contact_info_img" src="/static/img/phone.png">
+                <div style="font-size: 1em;">
+                  (555) 123-4567
+                </div>
+              </div>
+              <div class="contact_info">
+                <img class="img-responsive contact_info_img" src="/static/img/email.png">
+                <div style="font-size: 1em;">
+                  <em>info@bestcarsdealership.com</em>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
