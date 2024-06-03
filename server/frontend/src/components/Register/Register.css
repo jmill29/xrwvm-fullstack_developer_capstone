@@ -6,6 +6,8 @@
   background-color: darkturquoise;
   min-width: 350px;
   width: 30%;
+  border: 1px solid #333;
+  box-shadow: -5px -5px #777;
 }
 
 .inputs{
@@ -25,6 +27,7 @@
   width:200px;
   margin:.5cm;
   font-size: medium;
+  border-radius: 10px;
 }
 
 .submit_panel{
