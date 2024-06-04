@@ -13,18 +13,12 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
 class CarMake(models.Model):
-    name = models.CharField(max_length = 30)
-    description = models.CharField(max_length = 100)
-    hq_state = models.CharField(max_length = 20)
-    hq_city = models.CharField(max_length = 20)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    # Other fields as needed
 
     def __str__(self):
-        return '{maker} (located in {city}, {state}): {description}'.format(
-            maker = self.name, 
-            city = self.hq_city, 
-            state = self.hq_state,
-            description = self.description
-        )
+        return self.name  # Return the name as the string representation
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-To-One relationship to Car Make model (One Car Make has many
@@ -36,27 +30,22 @@ class CarMake(models.Model):
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
 class CarModel(models.Model):
-    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    dealer_id = models.IntegerField()
-    name = models.CharField(max_length = 30)
-    SEDAN = 'sedan'
-    SUV = 'suv'
-    WAGON = 'wagon'
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
+    dealer_id = models.IntegerField(null=True)
+    name = models.CharField(max_length=100)
     CAR_TYPES = [
-        (SEDAN, 'Sedan'),
-        (SUV, 'SUV'),
-        (WAGON, 'Wagon')
+        ('SEDAN', 'Sedan'),
+        ('SUV', 'SUV'),
+        ('WAGON', 'Wagon'),
+        # Add more choices as required
     ]
-    car_type = models.CharField(choices = CAR_TYPES, default = SEDAN,
-                                max_length = 20)
-    release_year = models.DateField()
-    mileage = models.IntegerField()
+    type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
+    year = models.IntegerField(default=2023,
+        validators=[
+            MaxValueValidator(2023),
+            MinValueValidator(2015)
+        ])
+    # Other fields as needed
 
     def __str__(self):
-        return '{make} {model} is a {car_type} with a gas mileage of {mileage} miles/gallon.' \
-          .format(
-            make = self.make.name,
-            model = self.name,
-            car_type = self.car_type,
-            mileage = self.mileage
-          )
+        return self.name  # Return the name as the string representation
