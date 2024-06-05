@@ -52,7 +52,7 @@ return(
   <div>
       <Header/>
 
-     <table className='table'>
+     <table className='table' style={{width: '95%', border: '1px solid #aaa'}}>
       <tr>
       <th>ID</th>
       <th>Dealer Name</th>
@@ -60,7 +60,8 @@ return(
       <th>Address</th>
       <th>Zip</th>
       <th>
-      <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
+      <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}
+        style={{textAlign: 'center'}}>
       <option value="" selected disabled hidden>State</option>
       <option value="All">All States</option>
       {states.map(state => (
