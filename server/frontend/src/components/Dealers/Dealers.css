@@ -1,8 +1,10 @@
 table{
-    margin:5px;
+    margin: 10px 25px auto auto;
     padding:10px;
-    border: grey solid 1px;
-    width:100%
+    border: #aaa solid 1px;
+    width:95%;
+    position: relative;
+    left: -1%;
   }
   
   td{
