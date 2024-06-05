@@ -2,6 +2,8 @@
 # import requests
 import os
 from dotenv import load_dotenv
+import requests
+from .tasks import format_query
 
 load_dotenv()
 
@@ -18,9 +20,11 @@ def get_request(endpoint, **kwargs):
         for key, value in kwargs.items():
             params= params + key + "=" + value + "&"
     
-    request_url = backend_url + endpoint + "?" + params
+        request_url = backend_url + endpoint + "?" + params
+    else:
+        request_url = backend_url + endpoint
 
-    print("GET from {} ".format(request_url))
+    print("GET from '{}' ".format(request_url))
     try:
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
@@ -30,8 +34,9 @@ def get_request(endpoint, **kwargs):
         print("Network exception occurred")
 
 def analyze_review_sentiments(text):
-    request_url = sentiment_analyzer_url+"analyze/"+text
+    request_url = sentiment_analyzer_url+"/analyze/"+format_query(text)
     # Add code for retrieving sentiments
+    print('GET from {}'.format(request_url))
     try:
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
