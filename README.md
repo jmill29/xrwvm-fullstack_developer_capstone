@@ -1,4 +1,4 @@
-# Dealerships Website Project
+# IBM Full-Stack Developer Professional Certification Capstone Project
 
 ## Overview
 
