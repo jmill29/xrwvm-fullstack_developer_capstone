@@ -93,15 +93,18 @@ const PostReview = () => {
   return (
     <div>
       <Header/>
-      <div  style={{margin:"5%"}}>
+      <div  style={{width: '50%', margin:"5% auto", display: 'flex', flexFlow: 'column', alignItems: 'center', minWidth: '500px'}}>
       <h1 style={{color:"darkblue"}}>{dealer.full_name}</h1>
-      <textarea id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
-      <div className='input_field'>
-      Purchase Date <input type="date" onChange={(e) => setDate(e.target.value)}/>
+      <textarea id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}
+        style={{width: '100%'}}></textarea>
+      <div className='input_field' style={{width: '100%', display: 'grid', gridTemplateColumns: '2fr 3fr', justifyItems: 'end'}}>
+      Purchase Date <input type="date" onChange={(e) => setDate(e.target.value)}
+        style={{justifySelf: 'start', marginLeft: '10px'}} />
       </div>
-      <div className='input_field'>
+      <div className='input_field' style={{width: '100%', display: 'grid', gridTemplateColumns: '2fr 3fr', justifyItems: 'end'}}>
       Car Make 
-      <select name="cars" id="cars" onChange={(e) => setModel(e.target.value)}>
+      <select name="cars" id="cars" onChange={(e) => setModel(e.target.value)}
+        style={{justifySelf: 'start', marginLeft: '10px'}}>
       <option value="" selected disabled hidden>Choose Car Make and Model</option>
       {carmodels.map(carmodel => (
           <option value={carmodel.CarMake+" "+carmodel.CarModel}>{carmodel.CarMake} {carmodel.CarModel}</option>
@@ -109,8 +112,9 @@ const PostReview = () => {
       </select>        
       </div >
 
-      <div className='input_field'>
-      Car Year <input type="int" onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
+      <div className='input_field' style={{width: '100%', display: 'grid', gridTemplateColumns: '2fr 3fr', justifyItems: 'end'}}>
+      Car Year <input type="int" onChange={(e) => setYear(e.target.value)} max={2023} min={2015}
+        style={{justifySelf: 'start', marginLeft: '10px'}}/>
       </div>
 
       <div>
