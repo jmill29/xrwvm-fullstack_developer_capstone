@@ -1,4 +1,4 @@
-# IBM Full-Stack Developer Professional Certification Capstone Project
+# Full-Stack Development Capstone Project
 
 ## Overview
 
