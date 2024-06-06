@@ -31,7 +31,7 @@ class CarMake(models.Model):
 # - __str__ method to print a car make object
 class CarModel(models.Model):
     car_make = models.ForeignKey(
-        CarMake, 
+        CarMake,
         on_delete=models.CASCADE
     )  # Many-to-One relationship
     dealer_id = models.IntegerField(null=True)

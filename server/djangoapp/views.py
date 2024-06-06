@@ -72,14 +72,20 @@ def registration(request):
     try:
         user = User.objects.get(username=username)
         username_exist = True
+    except User.DoesNotExist:
+        username_exist = False
     except Exception as e:
         username_exist = False
+        print(f'An unexpected error occurred: {e}')
 
     try:
         user = User.objects.get(email=email)
         email_exist = True
-    except:
+    except User.DoesNotExist:
         email_exist = False
+    except Exception as e:
+        email_exist = False
+        print(f'An unexpected error occurred: {e}')
 
     if not username_exist and not email_exist:
         user = User.objects.create(
@@ -153,7 +159,7 @@ def add_review(request):
         except Exception as e:
             return JsonResponse({
                 "status": 401,
-                "message": "Error in posting review"
+                "message": f"Error in posting review: {e}"
             })
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})

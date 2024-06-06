@@ -30,11 +30,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://jacoblmiller-8000.theianext-1-labs-prod-misc-' + \
+    'https://jacoblmiller-8000.theianext-1-labs-prod-misc-' +
     'tools-us-east-0.proxy.cognitiveclass.ai'
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://jacoblmiller-8000.theiadockernext-1-labs-prod-theiak8s-' + \
+    'https://jacoblmiller-8000.theiadockernext-1-labs-prod-theiak8s-' +
     '4-tor01.proxy.cognitiveclass.ai'
 ]
 
@@ -101,7 +101,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.' + \
+        'django.contrib.auth.password_validation.' +
         'UserAttributeSimilarityValidator',
     },
     {
